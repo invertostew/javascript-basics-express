@@ -17,7 +17,7 @@ const lowerString = (req, res) => {
 
 const firstCharsString = (req, res) => {
   const { string } = req.params;
-  const { length } = req.query;
+  const length = req.query.length || 1;
   res.status(200).json({ result: firstCharacters(string, length) });
 };
 
