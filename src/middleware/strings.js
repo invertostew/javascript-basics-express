@@ -1,4 +1,4 @@
-const checkLength = (req, res, next) => {
+const validateStringLength = (req, res, next) => {
   if (!req.query.length) {
     req.query.length = 1;
   }
@@ -6,4 +6,4 @@ const checkLength = (req, res, next) => {
   next();
 };
 
-module.exports = checkLength;
+module.exports = validateStringLength;
