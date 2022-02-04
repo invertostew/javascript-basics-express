@@ -15,8 +15,12 @@ const validateNumbers = (req, res, next) => {
 };
 
 const validateParametersExist = (req, res, next) => {
-  if (!req.body.a || !req.body.b) {
+  if (req.body.a === undefined || req.body.b === undefined) {
     res.status(400).json({ error: 'Parameters "a" and "b" are required.' });
+  }
+
+  if (req.body.b === 0) {
+    res.status(400).json({ error: 'Unable to divide by 0.' });
   }
 
   next();
