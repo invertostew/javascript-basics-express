@@ -4,6 +4,8 @@ const numbersRouter = require('./routes/numbers');
 
 const app = express();
 
+app.use(express.json());
+
 app.use('/strings', stringsRouter);
 app.use('/numbers', numbersRouter);
 

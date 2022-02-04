@@ -14,4 +14,25 @@ const validateNumbers = (req, res, next) => {
   next();
 };
 
-module.exports = validateNumbers;
+const validateParametersExist = (req, res, next) => {
+  if (!req.body.a || !req.body.b) {
+    res.status(400).json({ error: 'Parameters "a" and "b" are required.' });
+  }
+
+  next();
+};
+
+const validateBody = (req, res, next) => {
+  const radix = 10;
+
+  if (Number.isNaN(parseInt(req.body.a, radix)) || Number.isNaN(parseInt(req.body.b, radix))) {
+    res.status(400).json({ error: 'Parameters "a" and "b" must be valid numbers.' });
+  }
+
+  req.num1 = parseInt(req.body.a, radix);
+  req.num2 = parseInt(req.body.b, radix);
+
+  next();
+};
+
+module.exports = { validateNumbers, validateParametersExist, validateBody };
