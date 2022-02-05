@@ -1,16 +1,16 @@
 const express = require('express');
 const {
-  helloString,
-  upperString,
-  lowerString,
-  firstCharsString,
+  helloController,
+  upperController,
+  lowerController,
+  firstCharactersController,
 } = require('../controllers/strings');
 
 const stringsRouter = express.Router();
 
-stringsRouter.get('/hello/:string', helloString);
-stringsRouter.get('/upper/:string', upperString);
-stringsRouter.get('/lower/:string', lowerString);
-stringsRouter.get('/first-characters/:string', firstCharsString);
+stringsRouter.get('/hello/:string', helloController);
+stringsRouter.get('/upper/:string', upperController);
+stringsRouter.get('/lower/:string', lowerController);
+stringsRouter.get('/first-characters/:string', firstCharactersController);
 
 module.exports = stringsRouter;

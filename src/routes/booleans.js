@@ -1,17 +1,17 @@
 const express = require('express');
-const { validateIsNumber, validateSingleCharacter } = require('../middleware/booleans');
+const { validateIsOddParam, validateCharacterParam } = require('../middleware/booleans');
 const {
-  negateBoolean,
-  truthinessBoolean,
-  isOddBoolean,
-  startsWithBoolean,
+  negateController,
+  truthinessController,
+  isOddController,
+  startsWithController,
 } = require('../controllers/booleans');
 
 const booleansRouter = express.Router();
 
-booleansRouter.post('/negate', negateBoolean);
-booleansRouter.post('/truthiness', truthinessBoolean);
-booleansRouter.get('/is-odd/:num', validateIsNumber, isOddBoolean);
-booleansRouter.get('/:string/starts-with/:character', validateSingleCharacter, startsWithBoolean);
+booleansRouter.post('/negate', negateController);
+booleansRouter.post('/truthiness', truthinessController);
+booleansRouter.get('/is-odd/:num', validateIsOddParam, isOddController);
+booleansRouter.get('/:string/starts-with/:character', validateCharacterParam, startsWithController);
 
 module.exports = booleansRouter;
