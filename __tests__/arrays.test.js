@@ -16,7 +16,7 @@ describe('/arrays', () => {
   });
 
   describe('POST /to-string', () => {
-    xit('returns the stringified array', done => {
+    it('returns the stringified array', done => {
       request(app)
         .post('/arrays/to-string')
         .send({ array: ['cat', 'dog', 'elephant', 'fox'] })
@@ -29,7 +29,7 @@ describe('/arrays', () => {
   });
 
   describe('POST /append', () => {
-    xit('returns an array with the value appended', done => {
+    it('returns an array with the value appended', done => {
       request(app)
         .post('/arrays/append')
         .send({
