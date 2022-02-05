@@ -10,4 +10,12 @@ const validateIsNumber = (req, res, next) => {
   next();
 };
 
-module.exports = { validateIsNumber };
+const validateSingleCharacter = (req, res, next) => {
+  if (req.params.character.length > 1) {
+    res.status(400).json({ error: 'Parameter "character" must be a single character.' });
+  }
+
+  next();
+};
+
+module.exports = { validateIsNumber, validateSingleCharacter };
