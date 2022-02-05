@@ -1,4 +1,4 @@
-const { add, subtract, multiply, divide } = require('../lib/numbers');
+const { add, subtract, multiply, divide, remainder } = require('../lib/numbers');
 
 const addNumbers = (req, res) => {
   res.status(200).json({ result: add(req.num1, req.num2) });
@@ -16,9 +16,14 @@ const divideNumbers = (req, res) => {
   res.status(200).json({ result: divide(req.num1, req.num2) });
 };
 
+const remainderNumbers = (req, res) => {
+  res.status(200).json({ result: remainder(req.body.a, req.body.b) });
+};
+
 module.exports = {
   addNumbers,
   subtractNumbers,
   multiplyNumbers,
   divideNumbers,
+  remainderNumbers,
 };
