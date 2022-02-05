@@ -1,4 +1,4 @@
-const validateNumbers = (req, res, next) => {
+const validateGetParams = (req, res, next) => {
   const radix = 10;
 
   if (
@@ -14,7 +14,7 @@ const validateNumbers = (req, res, next) => {
   next();
 };
 
-const validateParametersExist = (req, res, next) => {
+const validatePostParams = (req, res, next) => {
   if (req.body.a === undefined || req.body.b === undefined) {
     res.status(400).json({ error: 'Parameters "a" and "b" are required.' });
   }
@@ -26,7 +26,7 @@ const validateParametersExist = (req, res, next) => {
   next();
 };
 
-const validateBody = (req, res, next) => {
+const validatePostBody = (req, res, next) => {
   const radix = 10;
 
   if (Number.isNaN(parseInt(req.body.a, radix)) || Number.isNaN(parseInt(req.body.b, radix))) {
@@ -39,4 +39,4 @@ const validateBody = (req, res, next) => {
   next();
 };
 
-module.exports = { validateNumbers, validateParametersExist, validateBody };
+module.exports = { validateGetParams, validatePostParams, validatePostBody };

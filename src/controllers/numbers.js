@@ -17,7 +17,7 @@ const divideNumbers = (req, res) => {
 };
 
 const remainderNumbers = (req, res) => {
-  res.status(200).json({ result: remainder(req.body.a, req.body.b) });
+  res.status(200).json({ result: remainder(req.num1, req.num2) });
 };
 
 module.exports = {
