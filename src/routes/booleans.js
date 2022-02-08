@@ -1,4 +1,5 @@
 const express = require('express');
+
 const { validateIsOddParam, validateCharacterParam } = require('../middleware/booleans');
 const {
   negateController,

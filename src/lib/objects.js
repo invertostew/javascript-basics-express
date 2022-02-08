@@ -27,10 +27,7 @@ const findHondas = cars => {
 };
 
 const averageAge = people => {
-  const totalAge = people.reduce(
-    (accumulator, person) => accumulator + person.age,
-    0
-  );
+  const totalAge = people.reduce((accumulator, person) => accumulator + person.age, 0);
   return totalAge / people.length;
 };
 
@@ -38,7 +35,7 @@ const createTalkingPerson = (name, age) => {
   const person = {
     name,
     age,
-    introduce: human => `Hi ${human}, my name is ${name} and I am ${age}!`
+    introduce: human => `Hi ${human}, my name is ${name} and I am ${age}!`,
   };
   return person;
 };
@@ -53,5 +50,5 @@ module.exports = {
   findByName,
   findHondas,
   averageAge,
-  createTalkingPerson
+  createTalkingPerson,
 };
